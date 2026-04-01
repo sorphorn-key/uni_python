@@ -28,7 +28,7 @@ canvas.create_window((0, 0), window=image_frame, anchor="nw")
 
 # Load and display image
 try:
-    image = Image.open("image.jpg")
+    image = Image.open("lang_imgs/image.jpg")
 
     # Get original dimensions
     img_width, img_height = image.size

@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="583995eb-4823-4e79-8cc1-42ac38a6072a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lang_imgs/image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pig.py" beforeDir="false" afterPath="$PROJECT_DIR$/pig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_extracting_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_extracting_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,28 +36,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.calculator.executor": "Run",
-    "Python.hely.executor": "Run",
-    "Python.image_detector.executor": "Run",
-    "Python.multi_acc_bank_system.executor": "Run",
-    "Python.pig.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.text_extracting_app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Meow-Meow/Python/uni_py_projects",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.calculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hely.executor&quot;: &quot;Run&quot;,
+    &quot;Python.image_detector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.multi_acc_bank_system.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pig.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text_extracting_app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Meow-Meow/Python/uni_py_projects&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Meow-Meow\Python\uni_py_projects" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Meow-Meow\Python\uni_py_projects\lang_imgs" />
     </key>
   </component>
   <component name="SharedIndexes">
