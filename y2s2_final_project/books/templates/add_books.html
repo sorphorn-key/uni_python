@@ -1,0 +1,22 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} Books {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+
+  <br>
+  <div class="container">
+  <form action="/add_books/" method="post"> 
+      {% csrf_token %} 
+    {{ form.as_p }}
+      <button type="submit" class="btn btn-light">Submit</button>
+  </form>
+</div>
+{% endblock %}
+
+
+  
+
+

@@ -1,0 +1,112 @@
+{% extends 'user_navbar.html' %}
+
+{% block title %} Books {% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block cart-item %}
+<li class="nav-item">
+  <a class="nav-link btn btn-light" href="/checkout/" aria-current="page" >Cart
+    (<span id="cart">0</span>)</a>
+</li>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="row">
+  <div class="col-md">
+    <div class="card card-body">
+      <h5>All Books ({{total_books}})</h5>
+    </div>
+    <div class="card card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Add To Cart</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        {% for book in books %}
+        <tr>
+          <td id="namepr{{book.id}}">{{book.book_name}}</td>
+          <td id="authorpr{{book.id}}">{{book.author}}</td>
+          <td id="categorypr{{book.id}}">{{book.category}}</td>
+          <td> ₹<span id="pricepr{{book.id}}">{{book.price}}</span></td>
+          <td id="stock{{book.id}}">{{book.stock}}</td>
+          <td><button id="pr{{book.id}}" class="btn btn-info cart">Buy Now</button></td>
+          <td class="quantity" id="divpr{{book.id}}"></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js %}
+
+<script>
+
+  if (localStorage.getItem('cart') == null) {
+    var cart = {};
+  } else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+  }
+
+
+  $('.cart').click(function () {
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+      qty = cart[idstr][0] + 1;
+    } else {
+      qty = 1;
+      name = document.getElementById('name' + idstr).innerHTML;
+      author = document.getElementById('author' + idstr).innerHTML;
+      category = document.getElementById('category' + idstr).innerHTML;
+      price = document.getElementById('price' + idstr).innerHTML;
+      cart[idstr] = [qty, name, author, category, price];
+    }
+    updateCart(cart);
+
+  });
+
+  function updateCart(cart) {
+    for(var items in cart){
+    document.getElementById('div' + items).innerHTML = "<button id='minus" + items + "' class='btn btn-primary minus'>-</button> <span id='val" + items + "''>" + cart[items][0] + "</span> <button id='plus" + items + "' class='btn btn-primary plus'> + </button>";
+  }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+  }
+
+$('.quantity').on("click", "button.minus", function() {
+  a = this.id.slice(7, );
+  cart['pr' + a][0] = cart['pr' + a][0] - 1;
+  cart['pr' + a][0] = Math.max(0, cart['pr' + a][0])
+  document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+  updateCart(cart);
+});
+$('.quantity').on("click", "button.plus", function() {
+  a = this.id.slice(6, );
+  stock = document.getElementById('stock' + a).innerHTML;
+  cart['pr' + a][0] = cart['pr' + a][0] + 1;
+  cart['pr' + a][0] = Math.min(cart['pr' + a][0], stock)
+  document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+  updateCart(cart);
+});
+
+</script>
+{% endblock %}

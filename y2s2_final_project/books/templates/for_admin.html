@@ -1,0 +1,41 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} Add Books {% endblock %}
+{% block profileactive %} active {% endblock profileactive %}
+
+{% block css %}
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+      <div class="row">
+        <div class="col-md">
+          <div class="card card-body grid">
+            <h5>All Books ({{total_books}})</h5>
+          </div>
+          <div class="card card-body">
+            <table class="table">
+              <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Delete</th>
+              </tr>
+  
+              {% for i in books %}
+                <tr>
+                  <td>{{i.book_name}}</td>
+                  <td>{{i.author}}</td>
+                  <td>{{i.category}}</td>
+                  <td>₹{{i.price}}</td>
+                  <td><a href="/all_books/delete_{{i.id}}/" class="btn btn-danger">Delete</a></td>
+                </tr>
+              {% endfor %}             
+            </table>
+          </div>
+        </div>       
+      </div>
+      {% endblock %}
+

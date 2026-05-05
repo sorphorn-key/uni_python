@@ -1,0 +1,59 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} Orders List {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-md">
+      <div class="card card-body">
+        <h5>{{customer.name}}</h5>
+      </div>
+      <div class="card card-body">
+        <table class="table">
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          <tbody id="myTable"></tbody>
+        </table>
+      </div>
+    </div>       
+  </div>
+  {% endblock %}
+  {% block js %}
+<script>
+  var myArray = []
+  const url = window.location.href;
+  $.ajax({
+    method: 'GET',
+    url: `${url}data`,
+    success: function(response){
+      myArray = response.data
+      myArray1 = JSON.parse(myArray);
+      console.log(myArray1)
+      buildTable(myArray1)
+    },
+    error: function(error){
+    console.log(error);
+    }
+  });
+  function buildTable(data){
+    var table = document.getElementById('myTable')
+    for(var items in data){
+      var row = `<tr>
+        <td>${data[items][1]}</td>
+        <td>${data[items][2]}</td>
+        <td>${data[items][3]}</td>
+        <td>${data[items][0]}</td>
+        <td>${data[items][4]}</td>
+        `
+        table.innerHTML += row
+    }
+  }
+</script>
+{% endblock %}
